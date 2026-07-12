@@ -1,7 +1,11 @@
-import axios from "axios";
+const API_URL = "http://127.0.0.1:8080";
 
-const api = axios.create({
-  baseURL: "http://localhost:5001/api",
-});
+export async function getDashboard() {
+  const response = await fetch(`${API_URL}/dashboard`);
 
-export default api;
+  if (!response.ok) {
+    throw new Error("Failed to fetch dashboard data");
+  }
+
+  return response.json();
+}
