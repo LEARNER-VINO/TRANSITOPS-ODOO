@@ -1,0 +1,5 @@
+flask
+flask-sqlalchemy
+flask-jwt-extended
+python-dotenv
+psycopg2-binary  # Use this if the DB is PostgreSQL
