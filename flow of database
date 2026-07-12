@@ -1,0 +1,64 @@
+
+                    |      USER        |
+                    +------------------+
+                    | UserID (PK)      |
+                    | Name             |
+                    | Email            |
+                    | Phone            |
+                    | Password         |
+                    | Role             |
+                    +------------------+
+                             |
+                             | Books
+                             |
+                             v
+                    +------------------+
+                    |    BOOKING       |
+                    +------------------+
+                    | BookingID (PK)   |
+                    | UserID (FK)      |
+                    | VehicleID (FK)   |
+                    | RouteID (FK)     |
+                    | BookingDate      |
+                    | Status           |
+                    +------------------+
+                      /              \
+                     /                \
+                    v                  v
+         +------------------+   +------------------+
+         |    VEHICLE       |   |      ROUTE      |
+         +------------------+   +------------------+
+         | VehicleID (PK)   |   | RouteID (PK)     |
+         | VehicleNumber    |   | Source           |
+         | VehicleType      |   | Destination      |
+         | Capacity         |   | Distance         |
+         | Status           |   | EstimatedTime    |
+         +------------------+   +------------------+
+                  |
+                  | Assigned To
+                  |
+                  v
+          +------------------+
+          |     DRIVER       |
+          +------------------+
+          | DriverID (PK)    |
+          | Name             |
+          | Phone            |
+          | LicenseNumber    |
+          | Availability     |
+          +------------------+
+
+                    |
+                    | Generates
+                    v
+
+          +------------------+
+          |     PAYMENT      |
+          +------------------+
+          | PaymentID (PK)   |
+          | BookingID (FK)   |
+          | Amount           |
+          | PaymentMethod    |
+          | PaymentStatus    |
+          | TransactionID    |
+          +------------------+
