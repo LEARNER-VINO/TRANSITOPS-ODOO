@@ -50,6 +50,5 @@ def add_vehicle():
         return jsonify({"status": "error", "message": str(e)}), 400
 
 if __name__ == "__main__":
-    # Changed to port 8080 to keep it safe from Mac system conflicts
-    app.run(debug=True, port=8080)
+     app.run(host="0.0.0.0", port=8080)
 
